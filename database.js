@@ -4,14 +4,17 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '4574',
+    password: 'MRpk@8065',
     database: 'movies'
 });
 
 // Connect to MySQL
 connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected to MySQL database');
+    if (err) {
+console.log("err of connecting database")
+    }else{
+        console.log('Connected to MySQL database');
+    }
 });
 
 // Create favorites table if not exists

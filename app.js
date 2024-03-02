@@ -18,7 +18,8 @@ app.get('/', (req, res) => {
 app.post('/search', async (req, res) => {
   try {
     const { search } = req.body;
-    const response = await axios.get(`http://www.omdbapi.com/?s=${search}&apikey=YOUR_API_KEY`);
+    const apiKey = 'fa9e4612'; 
+    const response = await axios.get(`http://www.omdbapi.com/?s=${search}&apikey=${apiKey}`);
     const movies = response.data.Search || [];
     res.render('search', { movies, message: null });
   } catch (error) {
